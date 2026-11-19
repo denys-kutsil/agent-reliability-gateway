@@ -15,11 +15,14 @@ The project is also an experiment: the same agent tasks run with and without the
 Requires Node 22 and pnpm 10 (`corepack enable`).
 
 ```
-pnpm install
+pnpm run setup    # starts PostgreSQL (pgvector) and DynamoDB Local in Docker; no AWS account, no keys
+pnpm run doctor   # checks Node, Docker and free ports, and says what to fix
 pnpm lint
 pnpm typecheck
 pnpm test
 ```
+
+Use `pnpm run setup` and `pnpm run doctor`, not `pnpm setup` / `pnpm doctor`: those are built-in pnpm commands.
 
 ## License
 

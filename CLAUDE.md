@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-The repository is at the planning stage: no commits and no source code yet. Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
+The repository is at the very start of Stage 1: monorepo scaffold, CI and local mode exist (`packages/core` is still a placeholder); the gateway itself is not written yet. Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
 
 ## What this is
 
@@ -22,7 +22,16 @@ pnpm typecheck
 pnpm test
 ```
 
-Planned, not yet present (Stage 1 and later): `pnpm setup`, `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm doctor` (checks Node, Docker, free ports), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`, `pnpm deploy:aws` / `pnpm destroy:aws`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
+Local mode (needs Docker, no AWS account and no keys):
+
+```
+pnpm run setup    # install, docker compose up, wait for healthchecks, create DynamoDB tables and Postgres schema; safe to re-run
+pnpm run doctor   # checks Node, Docker, free ports (5432, 8000) and says what to fix
+```
+
+Always use `pnpm run setup` and `pnpm run doctor`: bare `pnpm setup` and `pnpm doctor` are built-in pnpm commands and do not run these scripts (`pnpm setup` edits the shell profile). Local infrastructure is defined in `docker-compose.yml` (PostgreSQL with pgvector, DynamoDB Local); defaults are in `scripts/config.mjs`, overridable via `.env`.
+
+Planned, not yet present (Stage 1 and later): `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`, `pnpm deploy:aws` / `pnpm destroy:aws`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
 
 ## Architecture
 
@@ -86,6 +95,7 @@ Experiment configurations: A no gateway (naive retries), B retries only, C retri
 - One Linear issue per task, one branch per task. Independent tasks may run in parallel in separate git worktrees, one agent per worktree.
 - Every behaviour change comes with tests. Reliability logic is tested with unit tests on in-memory adapters and `FakeClock`, concurrency tests (N parallel identical calls yield exactly one execution; the token bucket never exceeds its limit), and integration tests against DynamoDB Local and pgvector. DynamoDB TTL does not work locally and must be verified once in AWS.
 - A task is done only when its acceptance criteria are met and verified.
+- Keep the Linear issue status in sync with the work: set it to In Progress when starting a task, and to Done when the task is finished (acceptance criteria verified and its PR merged to `main`). Update the status right after each task, without waiting to be asked. Linear identifiers are `AGE-nn`; the `ARG-nn` in issue titles is the plan numbering.
 - Record key decisions as short ADRs in `docs/adr/`.
 - No secrets in code or committed config; `.env` is gitignored, `.env.example` documents every variable. Everything must start without a `.env`.
 - Nothing from the author's previous employer (no code, internal names or data structures). Public wording is only "integrations with 811 providers in different US states".
