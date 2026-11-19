@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 1880 1710" width="1880" height="1710">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e1e1e" />
+    </marker>
+  </defs>
+  <rect x="0" y="-10" width="1880" height="1710" fill="#ffffff" />
+  <rect x="40" y="110" width="250" height="130" rx="8" ry="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2" opacity="1" />
+  <rect x="350" y="110" width="250" height="130" rx="8" ry="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" opacity="1" />
+  <rect x="660" y="110" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="970" y="110" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="1280" y="110" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="1590" y="110" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="40" y="360" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="350" y="360" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="660" y="360" width="250" height="130" rx="8" ry="8" fill="#ffd8a8" stroke="#e8590c" stroke-width="2" opacity="1" />
+  <rect x="970" y="360" width="250" height="130" rx="8" ry="8" fill="#ffec99" stroke="#f08c00" stroke-width="2" opacity="1" />
+  <rect x="1280" y="360" width="250" height="130" rx="8" ry="8" fill="#d0bfff" stroke="#7048e8" stroke-width="2" opacity="1" />
+  <rect x="1590" y="360" width="250" height="130" rx="8" ry="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" opacity="1" />
+  <rect x="300" y="1300" width="340" height="360" rx="8" ry="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" opacity="0.7" stroke-dasharray="8 4" />
+  <rect x="690" y="1280" width="620" height="370" rx="8" ry="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" opacity="0.7" stroke-dasharray="8 4" />
+  <rect x="40" y="1100" width="200" height="120" rx="8" ry="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2" opacity="1" />
+  <rect x="330" y="1080" width="260" height="160" rx="8" ry="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" opacity="1" />
+  <rect x="330" y="1360" width="260" height="110" rx="8" ry="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2" opacity="1" />
+  <rect x="330" y="1530" width="260" height="100" rx="8" ry="8" fill="#ffd8a8" stroke="#e8590c" stroke-width="2" opacity="1" />
+  <rect x="720" y="890" width="300" height="170" rx="8" ry="8" fill="#ffd8a8" stroke="#e8590c" stroke-width="2" opacity="1" />
+  <rect x="1100" y="890" width="300" height="120" rx="8" ry="8" fill="#ffd8a8" stroke="#e8590c" stroke-width="2" opacity="1" />
+  <rect x="1400" y="1100" width="250" height="120" rx="8" ry="8" fill="#dee2e6" stroke="#495057" stroke-width="2" opacity="1" />
+  <rect x="720" y="1340" width="220" height="110" rx="8" ry="8" fill="#ffec99" stroke="#f08c00" stroke-width="2" opacity="1" />
+  <rect x="720" y="1510" width="220" height="100" rx="8" ry="8" fill="#ffec99" stroke="#f08c00" stroke-width="2" opacity="1" />
+  <rect x="1030" y="1340" width="250" height="110" rx="8" ry="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" opacity="1" />
+  <polyline points="294,175 346,175" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="604,175 656,175" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="914,175 966,175" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1224,175 1276,175" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1534,175 1586,175" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="294,425 346,425" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="604,425 656,425" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="914,425 966,425" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1224,425 1276,425" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1534,425 1586,425" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1715,244 1715,300 165,300 165,356" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="244,1160 326,1160" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="460,1356 460,1244" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="460,1474 460,1526" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="594,1120 660,1120 660,975 716,975" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="594,1180 1396,1180" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="500,1076 500,840 1250,840 1250,886" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="594,1220 660,1220 660,1395 716,1395" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="944,1395 1026,1395" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="830,1454 830,1506" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polyline points="1155,1336 1155,1270 1525,1270 1525,1224" fill="none" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="40" y="56" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="26" fill="#1e1e1e" text-anchor="start">
+    <tspan x="40" dy="0">Call flow: what happens, in order</tspan>
+  </text>
+  <text x="40" y="82" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="40" dy="0">The order of steps is fixed. An early exit at any step is also audited and counted in metrics.</tspan>
+  </text>
+  <text x="165" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="165" dy="0">AI agent</tspan>
+    <tspan x="165" dy="21.25">decides what to do</tspan>
+    <tspan x="165" dy="21.25">calls http_request</tspan>
+  </text>
+  <text x="475" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="475" dy="0">gateway-mcp</tspan>
+    <tspan x="475" dy="21.25">receives the call</tspan>
+    <tspan x="475" dy="21.25">starts the pipeline</tspan>
+  </text>
+  <text x="785" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="785" dy="0">1. Route</tspan>
+    <tspan x="785" dy="21.25">rule + Zod + allowlist</tspan>
+    <tspan x="785" dy="21.25">fails: call denied</tspan>
+  </text>
+  <text x="1095" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1095" dy="0">2. Budget</tspan>
+    <tspan x="1095" dy="21.25">call and cost limit</tspan>
+    <tspan x="1095" dy="21.25">per taskId</tspan>
+  </text>
+  <text x="1405" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1405" dy="0">3. Idempotency</tspan>
+    <tspan x="1405" dy="21.25">write calls only</tspan>
+    <tspan x="1405" dy="21.25">duplicate never hits API</tspan>
+  </text>
+  <text x="1715" y="160.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1715" dy="0">4. Circuit breaker</tspan>
+    <tspan x="1715" dy="21.25">API is down: don't call</tspan>
+    <tspan x="1715" dy="21.25">one probe after cooldown</tspan>
+  </text>
+  <text x="165" y="410.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="165" dy="0">5. Rate limit</tspan>
+    <tspan x="165" dy="21.25">at most N requests</tspan>
+    <tspan x="165" dy="21.25">per route</tspan>
+  </text>
+  <text x="475" y="410.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="475" dy="0">6. Call + retry</tspan>
+    <tspan x="475" dy="21.25">timeout; retry only on</tspan>
+    <tspan x="475" dy="21.25">429, 503, read timeout</tspan>
+  </text>
+  <text x="785" y="410.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="785" dy="0">External API</tspan>
+    <tspan x="785" dy="21.25">Calendar / Email / CRM</tspan>
+    <tspan x="785" dy="21.25">response or timeout</tspan>
+  </text>
+  <text x="1095" y="399.5" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1095" dy="0">7. Reconcile</tspan>
+    <tspan x="1095" dy="21.25">write timed out: GET to</tspan>
+    <tspan x="1095" dy="21.25">check if it happened;</tspan>
+    <tspan x="1095" dy="21.25">no template: unknown</tspan>
+  </text>
+  <text x="1405" y="410.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1405" dy="0">8. Complete</tspan>
+    <tspan x="1405" dy="21.25">idempotency, audit,</tspan>
+    <tspan x="1405" dy="21.25">metrics, event</tspan>
+  </text>
+  <text x="1715" y="410.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1715" dy="0">Result to agent</tspan>
+    <tspan x="1715" dy="21.25">success / unknown /</tspan>
+    <tspan x="1715" dy="21.25">denied with reason</tspan>
+  </text>
+  <text x="40" y="546" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="40" dy="0">Steps 1-5 do not touch the API yet: invalid, unsafe and</tspan>
+    <tspan x="40" dy="20">excessive calls are stopped here.</tspan>
+  </text>
+  <text x="40" y="596" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="40" dy="0">After a write timeout the gateway does NOT retry blindly: it checks with a</tspan>
+    <tspan x="40" dy="20">GET from the rule's template whether the action already happened.</tspan>
+  </text>
+  <text x="40" y="756" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="26" fill="#1e1e1e" text-anchor="start">
+    <tspan x="40" dy="0">System: components and data paths</tspan>
+  </text>
+  <text x="40" y="782" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="40" dy="0">The gateway is stateless: many copies can run, coordinating only through DynamoDB.</tspan>
+  </text>
+  <text x="314" y="1326" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="314" dy="0">Control plane</tspan>
+  </text>
+  <text x="704" y="1306" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="16" fill="#495057" text-anchor="start">
+    <tspan x="704" dy="0">Async path (long calls)</tspan>
+  </text>
+  <text x="140" y="1145.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="140" dy="0">Many AI agents</tspan>
+    <tspan x="140" dy="21.25">parallel tasks</tspan>
+    <tspan x="140" dy="21.25">taskId in _meta</tspan>
+  </text>
+  <text x="460" y="1134.5" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="460" dy="0">gateway-mcp</tspan>
+    <tspan x="460" dy="21.25">stateless, N copies</tspan>
+    <tspan x="460" dy="21.25">8-step pipeline</tspan>
+    <tspan x="460" dy="21.25">state only in DynamoDB</tspan>
+  </text>
+  <text x="460" y="1410.75" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="460" dy="0">control-plane (NestJS)</tspan>
+    <tspan x="460" dy="21.25">routes, keys, limits</tspan>
+  </text>
+  <text x="460" y="1575.75" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="460" dy="0">PostgreSQL</tspan>
+    <tspan x="460" dy="21.25">users, API keys, routes</tspan>
+  </text>
+  <text x="870" y="949.5" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="870" dy="0">DynamoDB</tspan>
+    <tspan x="870" dy="21.25">idempotency, rate limit,</tspan>
+    <tspan x="870" dy="21.25">circuit breaker, budget, jobs</tspan>
+    <tspan x="870" dy="21.25">conditional writes, no locks</tspan>
+  </text>
+  <text x="1250" y="935.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1250" dy="0">Audit and events</tspan>
+    <tspan x="1250" dy="21.25">S3: audit as JSONL batches</tspan>
+    <tspan x="1250" dy="21.25">EventBridge: events</tspan>
+  </text>
+  <text x="1525" y="1155.75" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1525" dy="0">External HTTP APIs</tspan>
+    <tspan x="1525" dy="21.25">unreliable, rate-limited</tspan>
+  </text>
+  <text x="830" y="1390.75" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="830" dy="0">SQS</tspan>
+    <tspan x="830" dy="21.25">queue for long calls</tspan>
+  </text>
+  <text x="830" y="1555.75" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="830" dy="0">DLQ</tspan>
+    <tspan x="830" dy="21.25">poison messages</tspan>
+  </text>
+  <text x="1155" y="1380.125" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="17" fill="#1e1e1e" text-anchor="middle">
+    <tspan x="1155" dy="0">Lambda worker</tspan>
+    <tspan x="1155" dy="21.25">scales with the queue</tspan>
+    <tspan x="1155" dy="21.25">writes result to jobs</tspan>
+  </text>
+  <text x="262" y="1146" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="262" dy="0">MCP</tspan>
+  </text>
+  <text x="470" y="1276" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="470" dy="0">routes (30 s cache)</tspan>
+  </text>
+  <text x="530" y="974" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="530" dy="0">shared state</tspan>
+  </text>
+  <text x="860" y="1166" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="860" dy="0">sync: short calls</tspan>
+  </text>
+  <text x="720" y="828" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="720" dy="0">audit, events</tspan>
+  </text>
+  <text x="596" y="1254" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="596" dy="0">async</tspan>
+  </text>
+  <text x="840" y="1484" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="840" dy="0">after failures</tspan>
+  </text>
+  <text x="1200" y="1259" font-family="Virgil, Segoe UI Emoji, Helvetica, Arial, sans-serif" font-size="14" fill="#495057" text-anchor="start">
+    <tspan x="1200" dy="0">same rules, same API call</tspan>
+  </text>
+</svg>
