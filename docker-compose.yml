@@ -1,0 +1,40 @@
+# Local infrastructure. No AWS account and no keys needed.
+# Every value has a safe default, so this works without a .env file.
+name: arg
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-arg}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-arg}
+      POSTGRES_DB: ${POSTGRES_DB:-arg}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    # -sharedDb: one database regardless of credentials/region, so any client sees the same tables.
+    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-dbPath", "/data"]
+    user: root
+    ports:
+      - "127.0.0.1:${DYNAMODB_PORT:-8000}:8000"
+    volumes:
+      - dynamodb-data:/data
+    healthcheck:
+      # The image has no curl; probe the TCP port with bash.
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/8000'"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  postgres-data:
+  dynamodb-data:
