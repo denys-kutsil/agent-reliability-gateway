@@ -28,6 +28,11 @@ export function startMockServer(
     readRequest(incoming)
       .then(handler)
       .then((res) => {
+        if (res.abortAfterMs !== undefined) {
+          // Simulated timeout: say nothing, then cut the connection.
+          setTimeout(() => incoming.socket.destroy(), res.abortAfterMs);
+          return;
+        }
         outgoing.writeHead(res.status, res.headers);
         outgoing.end(res.body);
       })

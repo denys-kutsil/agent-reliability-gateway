@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createCrmHandler } from "./crm.js";
-import { json, req, testDeps } from "./test-helpers.js";
+import { json, req, testDeps } from "../testing/test-helpers.js";
 
 const rpc = (method: string, params?: unknown, id: number | null = 1) =>
   req("POST", "/rpc", json({ id, method, params }));

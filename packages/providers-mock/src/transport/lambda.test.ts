@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createLambdaHandler, type FunctionUrlEvent } from "./lambda.js";
-import { createMockApp } from "./router.js";
-import { testDeps } from "./test-helpers.js";
+import { createMockApp } from "../app/router.js";
+import { testDeps } from "../testing/test-helpers.js";
 
 const event = (
   method: string,

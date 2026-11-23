@@ -25,7 +25,9 @@ export class MockProviders extends Construct {
     });
 
     this.function = new NodejsFunction(this, "Handler", {
-      entry: fileURLToPath(new URL("../../providers-mock/src/lambda.ts", import.meta.url)),
+      entry: fileURLToPath(
+        new URL("../../providers-mock/src/transport/lambda.ts", import.meta.url),
+      ),
       handler: "handler",
       runtime: Runtime.NODEJS_22_X,
       architecture: Architecture.ARM_64,

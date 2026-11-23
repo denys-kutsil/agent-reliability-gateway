@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-The repository is in Stage 1: monorepo scaffold, CI, local mode, AWS account setup with an empty-then-growing CDK stack, and the three mock providers (`packages/providers-mock`, local server and Lambda with a Function URL) exist; `packages/core` is still a placeholder and the gateway itself is not written yet. Next in Stage 1: ARG-04 (fault injection), ARG-05 (scripted agent, runner, config A). Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
+The repository is in Stage 1: monorepo scaffold, CI, local mode, AWS account setup with an empty-then-growing CDK stack, and the three mock providers (`packages/providers-mock`, local server and Lambda with a Function URL) exist; `packages/core` is still a placeholder and the gateway itself is not written yet. Fault injection (ARG-04) is written in `packages/providers-mock/src/faults/faults.ts`. Next in Stage 1: ARG-05 (scripted agent, runner, config A). Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
 
 ## What this is
 
@@ -46,7 +46,10 @@ Mock providers (Calendar, Email, CRM), local HTTP server on port 8081 (`/calenda
 ```
 pnpm mock                       # state in memory, no Docker needed
 pnpm mock --state=dynamodb      # state in DynamoDB Local (table arg_mock_state; run `pnpm run setup` first)
+pnpm mock --faults=high         # fault injection: none (default), low, high, outage; also env MOCK_FAULT_PROFILE
 ```
+
+Fault injection is seeded by the `x-request-id` header plus optional `x-attempt` (so a retry can draw a different outcome); a request can override the profile with `x-fault-profile`. `outage` starts at the first request and lasts 2 minutes.
 
 Planned, not yet present (Stage 1 and later): `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
 
@@ -90,7 +93,7 @@ Fixed order for every call. Early exits are also audited and counted in metrics.
 - `packages/control-plane`: NestJS (Passport JWT, class-validator, throttler, Terminus): auth with refresh rotation, password reset, RBAC via `@Roles` and `Reflector`, agent API keys, limits/budgets/audit endpoints.
 - `packages/llm`: `LlmClient` (OpenAI-compatible: Gemini, OpenRouter fallback), structured outputs from the same Zod schemas with one repair attempt, cost accounting, evals.
 - `packages/rag`: separate MCP knowledge server (`search_docs`): ingest, hybrid search (pgvector + full-text, RRF), recall@k and MRR.
-- `packages/providers-mock`: three deliberately different mock HTTP APIs (Calendar, Email, CRM) with seeded fault injection (profiles low 5%, high 25%, outage 2 min; modes 429, 5xx, timeout without action, "action done but response lost"). The seed comes from the request id so every configuration sees the same fault sequence.
+- `packages/providers-mock`: three deliberately different mock HTTP APIs (Calendar, Email, CRM) with seeded fault injection (profiles low 5%, high 25%, outage 2 min; modes 429, 5xx, timeout without action, "action done but response lost"). The seed comes from the request id so every configuration sees the same fault sequence. Layout of `src/`: `providers/` (the three APIs), `faults/`, `state/` (in-memory and DynamoDB), `transport/` (shared request/response types, Node server, Lambda adapter), `app/` (router and deps), `testing/`; entry points are `main.ts` (local) and `transport/lambda.ts` (Lambda).
 - `packages/worker`: Lambda, SQS to provider to jobs table; poison messages go to a DLQ.
 - `packages/agent`: scripted and LLM agents, experiment runner.
 - `packages/infra`: AWS CDK v2 app. Also `corpus/` (provider rules in markdown for RAG), `analysis/` (Python with uv, pandas, matplotlib), `experiments/` (run configs and JSONL results), `docs/` (ADRs, design doc).

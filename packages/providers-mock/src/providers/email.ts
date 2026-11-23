@@ -1,7 +1,7 @@
 import { z } from "zod";
-import type { ProviderDeps } from "./deps.js";
-import { jsonResponse, type MockHandler, type MockResponse } from "./http.js";
-import type { MockEntity } from "./state.js";
+import type { ProviderDeps } from "../app/deps.js";
+import { jsonResponse, type MockHandler, type MockResponse } from "../transport/http.js";
+import type { MockEntity } from "../state/state.js";
 
 /**
  * Email: form-encoded request, errors as `{ errors: [{ field, message }] }` (HTTP 422).

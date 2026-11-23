@@ -1,7 +1,8 @@
-import { defaultDeps } from "./deps.js";
-import { createDynamoMockState } from "./dynamodb-state.js";
+import { defaultDeps } from "../app/deps.js";
+import { createDynamoMockState } from "../state/dynamodb-state.js";
+import { parseProfile } from "../faults/faults.js";
 import type { MockHandler, MockRequest, MockResponse } from "./http.js";
-import { createMockApp } from "./router.js";
+import { createMockApp } from "../app/router.js";
 
 /** The part of a Lambda Function URL event (payload format 2.0) that we use. */
 export interface FunctionUrlEvent {
@@ -39,8 +40,14 @@ export function toFunctionUrlResult(res: MockResponse): FunctionUrlResult {
 }
 
 export function createLambdaHandler(app: MockHandler) {
-  return async (event: FunctionUrlEvent): Promise<FunctionUrlResult> =>
-    toFunctionUrlResult(await app(toMockRequest(event)));
+  return async (event: FunctionUrlEvent): Promise<FunctionUrlResult> => {
+    const res = await app(toMockRequest(event));
+    if (res.abortAfterMs !== undefined) {
+      // Lambda cannot drop the connection; hang, then answer with a gateway timeout.
+      await new Promise((done) => setTimeout(done, res.abortAfterMs));
+    }
+    return toFunctionUrlResult(res);
+  };
 }
 
 let cached: ReturnType<typeof createLambdaHandler> | undefined;
@@ -55,6 +62,7 @@ export const handler = (event: FunctionUrlEvent): Promise<FunctionUrlResult> => 
           region: process.env["AWS_REGION"] ?? "us-east-1",
         }),
       }),
+      { profile: parseProfile(process.env["MOCK_FAULT_PROFILE"]) ?? "none", hangMs: 25_000 },
     ),
   );
   return cached(event);

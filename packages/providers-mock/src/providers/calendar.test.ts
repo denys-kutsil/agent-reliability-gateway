@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createCalendarHandler } from "./calendar.js";
-import { json, req, testDeps } from "./test-helpers.js";
+import { json, req, testDeps } from "../testing/test-helpers.js";
 
 const event = {
   title: "Standup",

@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { createMockApp } from "./router.js";
+import { createMockApp } from "../app/router.js";
 import { startMockServer } from "./server.js";
-import { testDeps } from "./test-helpers.js";
+import { testDeps } from "../testing/test-helpers.js";
 
 describe("local server (in-memory state, real HTTP)", () => {
   let base = "";
