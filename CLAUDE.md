@@ -40,6 +40,13 @@ AWS_PROFILE=my-project pnpm destroy:aws   # cdk destroy; removes the stack, not 
 
 `pnpm deploy` is also a pnpm built-in, so scripts call `pnpm --filter @arg/infra run deploy`; always use the `:aws` scripts. `cdk bootstrap` was run once for account/region `us-east-1`.
 
+Mock providers (Calendar, Email, CRM), local HTTP server on port 8081 (`/calendar`, `/email`, `/crm`):
+
+```
+pnpm mock                       # state in memory, no Docker needed
+pnpm mock --state=dynamodb      # state in DynamoDB Local (table arg_mock_state; run `pnpm run setup` first)
+```
+
 Planned, not yet present (Stage 1 and later): `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
 
 ## Architecture
