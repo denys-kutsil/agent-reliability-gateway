@@ -31,7 +31,16 @@ pnpm run doctor   # checks Node, Docker, free ports (5432, 8000) and says what t
 
 Always use `pnpm run setup` and `pnpm run doctor`: bare `pnpm setup` and `pnpm doctor` are built-in pnpm commands and do not run these scripts (`pnpm setup` edits the shell profile). Local infrastructure is defined in `docker-compose.yml` (PostgreSQL with pgvector, DynamoDB Local); defaults are in `scripts/config.mjs`, overridable via `.env`.
 
-Planned, not yet present (Stage 1 and later): `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`, `pnpm deploy:aws` / `pnpm destroy:aws`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
+AWS (real account, Free plan; never as root): work under the SSO profile, e.g. `AWS_PROFILE=my-project`. The bare `default` profile is intentionally not logged in.
+
+```
+AWS_PROFILE=my-project pnpm deploy:aws    # cdk deploy of packages/infra
+AWS_PROFILE=my-project pnpm destroy:aws   # cdk destroy; removes the stack, not the CDK bootstrap resources
+```
+
+`pnpm deploy` is also a pnpm built-in, so scripts call `pnpm --filter @arg/infra run deploy`; always use the `:aws` scripts. `cdk bootstrap` was run once for account/region `us-east-1`.
+
+Planned, not yet present (Stage 1 and later): `pnpm demo` (local run, no AWS account or LLM keys needed), `pnpm demo:llm`, `pnpm ingest`, `pnpm eval`. Add exact commands here, including how to run a single test, once the tooling exists. LLM evals and retrieval evals are run manually, not in CI.
 
 ## Architecture
 

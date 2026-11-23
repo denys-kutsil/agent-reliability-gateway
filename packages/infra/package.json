@@ -1,0 +1,25 @@
+{
+  "name": "@arg/infra",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AWS CDK v2 app. Everything deploys with one command and is removed with cdk destroy.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "synth": "cdk synth",
+    "bootstrap": "cdk bootstrap",
+    "deploy": "cdk deploy --require-approval never",
+    "destroy": "cdk destroy --force"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.277.0",
+    "constructs": "^10.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "aws-cdk": "^2.1149.0",
+    "tsx": "^4.23.15"
+  }
+}
