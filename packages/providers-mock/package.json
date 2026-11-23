@@ -1,0 +1,24 @@
+{
+  "name": "@arg/providers-mock",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Three deliberately different mock HTTP APIs (Calendar, Email, CRM) that the gateway protects the agent from.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1172.0",
+    "@aws-sdk/lib-dynamodb": "^3.1175.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15"
+  }
+}

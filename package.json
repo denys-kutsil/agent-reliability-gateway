@@ -17,7 +17,8 @@
     "setup": "pnpm install --frozen-lockfile && node scripts/setup.mjs",
     "doctor": "node scripts/doctor.mjs",
     "deploy:aws": "pnpm --filter @arg/infra run deploy",
-    "destroy:aws": "pnpm --filter @arg/infra run destroy"
+    "destroy:aws": "pnpm --filter @arg/infra run destroy",
+    "mock": "pnpm --filter @arg/providers-mock run start"
   },
   "devDependencies": {
     "@aws-sdk/client-dynamodb": "^3.1172.0",
