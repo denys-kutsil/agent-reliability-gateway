@@ -1,7 +1,7 @@
 import { z } from "zod";
-import type { ProviderDeps } from "./deps.js";
-import { jsonResponse, type MockHandler, type MockResponse } from "./http.js";
-import type { MockEntity } from "./state.js";
+import type { ProviderDeps } from "../app/deps.js";
+import { jsonResponse, type MockHandler, type MockResponse } from "../transport/http.js";
+import type { MockEntity } from "../state/state.js";
 
 /**
  * CRM: JSON-RPC-like. Every answer to `POST /rpc` is HTTP 200; failures are in the body as

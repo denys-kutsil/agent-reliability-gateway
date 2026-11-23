@@ -1,5 +1,5 @@
-import { defaultDeps, type ProviderDeps } from "./deps.js";
-import type { MockRequest } from "./http.js";
+import { defaultDeps, type ProviderDeps } from "../app/deps.js";
+import type { MockRequest } from "../transport/http.js";
 
 export function testDeps(): ProviderDeps {
   let n = 0;

@@ -1,9 +1,12 @@
-import { defaultDeps } from "./deps.js";
-import { createDynamoMockState } from "./dynamodb-state.js";
-import { createMockApp } from "./router.js";
-import { startMockServer } from "./server.js";
+import { defaultDeps } from "./app/deps.js";
+import { createDynamoMockState } from "./state/dynamodb-state.js";
+import { parseProfile } from "./faults/faults.js";
+import { createMockApp } from "./app/router.js";
+import { startMockServer } from "./transport/server.js";
 
-// Local mode entry point. Usage: tsx src/main.ts [--port=8081] [--state=memory|dynamodb]
+// Local mode entry point.
+// Usage: tsx src/main.ts [--port=8081] [--state=memory|dynamodb] [--faults=none|low|high|outage]
+// A request can override the profile with the `x-fault-profile` header.
 const args = new Map(
   process.argv.slice(2).map((a) => {
     const [k = "", v = ""] = a.replace(/^--/, "").split("=");
@@ -24,8 +27,13 @@ const store =
       })
     : undefined;
 
-const { port: bound } = await startMockServer(createMockApp(defaultDeps(store && { store })), {
-  port,
-});
-console.log(`mock providers on http://127.0.0.1:${String(bound)} (state: ${state})`);
+const profile = parseProfile(args.get("faults") ?? process.env["MOCK_FAULT_PROFILE"]) ?? "none";
+
+const { port: bound } = await startMockServer(
+  createMockApp(defaultDeps(store && { store }), { profile }),
+  { port },
+);
+console.log(
+  `mock providers on http://127.0.0.1:${String(bound)} (state: ${state}, faults: ${profile})`,
+);
 console.log("  /calendar/events   /email/messages   /crm/rpc");

@@ -13,6 +13,8 @@ export interface MockResponse {
   status: number;
   headers: Record<string, string>;
   body: string;
+  /** Fault injection: hang this long without answering, then drop the connection. */
+  abortAfterMs?: number;
 }
 
 export type MockHandler = (req: MockRequest) => Promise<MockResponse>;

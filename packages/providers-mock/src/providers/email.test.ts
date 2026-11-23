@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createEmailHandler } from "./email.js";
-import { form, json, req, testDeps } from "./test-helpers.js";
+import { form, json, req, testDeps } from "../testing/test-helpers.js";
 
 const mail = { to: "a@example.com", subject: "Hi", body: "Hello" };
 
