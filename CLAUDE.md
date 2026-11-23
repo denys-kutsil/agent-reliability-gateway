@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-The repository is at the very start of Stage 1: monorepo scaffold, CI and local mode exist (`packages/core` is still a placeholder); the gateway itself is not written yet. Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
+The repository is in Stage 1: monorepo scaffold, CI, local mode, AWS account setup with an empty-then-growing CDK stack, and the three mock providers (`packages/providers-mock`, local server and Lambda with a Function URL) exist; `packages/core` is still a placeholder and the gateway itself is not written yet. Next in Stage 1: ARG-04 (fault injection), ARG-05 (scripted agent, runner, config A). Everything below describes the intended design from the project plan. Work is tracked as numbered issues (ARG-nn) in Linear (workspace "Agent Reliability Gateway", https://linear.app/agent-reliability-gateway), which is the source of truth for tasks and acceptance criteria. Read the issue before implementing anything.
 
 ## What this is
 
@@ -36,6 +36,7 @@ AWS (real account, Free plan; never as root): work under the SSO profile, e.g. `
 ```
 AWS_PROFILE=my-project pnpm deploy:aws    # cdk deploy of packages/infra
 AWS_PROFILE=my-project pnpm destroy:aws   # cdk destroy; removes the stack, not the CDK bootstrap resources
+AWS_PROFILE=my-project pnpm smoke:aws     # unsigned request gets 403; SigV4-signed create + find by clientRef works
 ```
 
 `pnpm deploy` is also a pnpm built-in, so scripts call `pnpm --filter @arg/infra run deploy`; always use the `:aws` scripts. `cdk bootstrap` was run once for account/region `us-east-1`.
