@@ -1,0 +1,15 @@
+{
+  "profile": "high",
+  "tasks": 200,
+  "successRate": 0.965,
+  "tasksWithDuplicates": 34,
+  "duplicateRate": 0.17,
+  "totalDuplicates": 38,
+  "duplicatesByProvider": {
+    "calendar": 13,
+    "email": 15,
+    "crm": 10
+  },
+  "p95LatencyMs": 603,
+  "callsPerTask": 3.89
+}
