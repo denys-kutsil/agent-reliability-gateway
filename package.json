@@ -19,6 +19,7 @@
     "deploy:aws": "pnpm --filter @arg/infra run deploy",
     "destroy:aws": "pnpm --filter @arg/infra run destroy",
     "mock": "pnpm --filter @arg/providers-mock run start",
+    "experiment:a": "pnpm --filter @arg/agent run start",
     "smoke:aws": "bash scripts/smoke-aws.sh"
   },
   "devDependencies": {
